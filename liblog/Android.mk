@@ -70,7 +70,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := liblog_static
 LOCAL_SRC_FILES := $(liblog_sources)
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../include/
-LOCAL_CFLAGS := $(CUTILS_CFLAGS)
+LOCAL_CFLAGS := $(CUTILS_CFLAGS) -fPIC
 include $(BUILD_STATIC_LIBRARY)
 
 include $(CLEAR_VARS)

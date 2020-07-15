@@ -27,6 +27,8 @@
 #include <string.h>
 #include <limits.h>
 
+#include <stdlib.h> // for mkstemp
+
 #define ALL_PERMS (S_ISUID | S_ISGID | S_ISVTX | S_IRWXU | S_IRWXG | S_IRWXO)
 #define BUF_SIZE 64
 

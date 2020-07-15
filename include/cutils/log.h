@@ -28,6 +28,9 @@
 #ifndef _LIBS_CUTILS_LOG_H
 #define _LIBS_CUTILS_LOG_H
 
+// Avoid compilation errors due to enum redifinition
+#include <android/log.h>
+
 #include <stdio.h>
 #include <time.h>
 #include <sys/types.h>
@@ -471,7 +474,6 @@ typedef enum {
     EVENT_TYPE_LIST     = 3,
 } AndroidEventLogType;
 
-
 #ifndef LOG_EVENT_INT
 #define LOG_EVENT_INT(_tag, _value) {                                       \
         int intBuf = _value;                                                \
@@ -540,6 +542,7 @@ typedef enum {
 #define android_logToFile(tag, file) (0)
 #define android_logToFd(tag, fd) (0)
 
+#if 0
 typedef enum {
     LOG_ID_MAIN = 0,
     LOG_ID_RADIO = 1,
@@ -548,6 +551,7 @@ typedef enum {
 
     LOG_ID_MAX
 } log_id_t;
+#endif
 
 /*
  * Send a simple string to the log.

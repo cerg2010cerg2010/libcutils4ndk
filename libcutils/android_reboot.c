@@ -100,6 +100,7 @@ static void remount_ro(void)
     return;
 }
 
+extern int __reboot(int, int, int, void*);
 
 int android_reboot(int cmd, int flags, char *arg)
 {

@@ -124,7 +124,8 @@ LOCAL_SRC_FILES := $(commonSources) \
         uevent.c
 
 ifeq ($(TARGET_ARCH),arm)
-LOCAL_SRC_FILES += arch-arm/memset32.S
+#LOCAL_SRC_FILES += arch-arm/memset32.S
+LOCAL_SRC_FILES += memory.c
 else  # !arm
 ifeq ($(TARGET_ARCH_VARIANT),x86-atom)
 LOCAL_CFLAGS += -DHAVE_MEMSET16 -DHAVE_MEMSET32
@@ -140,7 +141,7 @@ endif # !arm
 
 LOCAL_C_INCLUDES := $(libcutils_c_includes) $(KERNEL_HEADERS) $(LOCAL_PATH)/../include/
 LOCAL_STATIC_LIBRARIES := liblog_static
-LOCAL_CFLAGS += $(targetSmpFlag) $(CUTILS_CFLAGS)
+LOCAL_CFLAGS += $(targetSmpFlag) $(CUTILS_CFLAGS) -fPIC
 include $(BUILD_STATIC_LIBRARY)
 
 include $(CLEAR_VARS)

@@ -1,6 +1,6 @@
 
 APP_PROJECT_PATH    := $(call my-dir)
-APP_MODULES         := liblog libcutils libsysutils
+APP_MODULES         := liblog_static libcutils_static libsysutils
 APP_BUILD_SCRIPT    := $(APP_PROJECT_PATH)/Android.mk
 APP_PLATFORM        := android-14
 APP_ABI             := armeabi-v7a
